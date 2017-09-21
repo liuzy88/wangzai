@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>旺仔快讯-每天千款天猫淘宝内部优惠券秒杀，一折限时疯抢！</title>
+    <meta name="Keywords" content="旺仔快讯,天猫淘宝内部优惠券折扣,9块9包邮,限时特卖,优品折扣,旺仔快讯" />
+    <meta name="Description" content="旺仔快讯-优惠券折扣直播第一站！每天更新千款，纯人工筛选验货，限时限量特卖，全场1折包邮！" />
+    <script src="js/jquery.2.0.min.js"></script>
+    <link href="css/wap_common.css" rel="stylesheet">
+    <link href="css/wapcat.css" rel="stylesheet" />
+    <script src="js/lazyload.js"></script>
+</head>
+
+<body>
+    <div class="main-title clearfix">
+        <a href="javascript:;" class="main-back"></a>
+        <div class="menu-cat">
+            <span id="menu-cat-btn"><%=cname%><i></i></span>
+        </div>
+        <a class="mui-action-menu main-home" href="/index.php"></a>
+    </div>
+    <!-- 主界面具体展示内容 -->
+    <div class="order-nav">
+        <ul>
+            <li class="<%=csort==1?'cur':''%>">
+                <span><a href="/cat?csort=1&cname=<%=cname%>">人气</a></span>
+            </li>
+            <li class="<%=csort==2?'cur':''%>">
+                <span><a href="/cat?csort=2&cname=<%=cname%>">最新</a></span>
+            </li>
+            <li class="<%=csort==3?'cur':''%>">
+                <span><a href="/cat?csort=3&cname=<%=cname%>">销量</a></span>
+            </li>
+            <li class="<%=csort==4?'cur':''%>">
+                <span><a href="/cat?csort=4&cname=<%=cname%>">价格</a></span>
+            </li>
+        </ul>
+    </div>
+    <div class="goods-list">
+        <% include ./html/goods-item.html %>
+    </div>
+    <div class="pullup-goods">
+        <div class="label">商品加载中...</div>
+    </div>
+    <% include ./html/show-top-menu.html %>
+    <div class="toTop">&#xe601;</div>
+    <script src="js/cms_common.js"></script>
+    <script>
+    $(function() {
+        $("img.lazy").lazyload();
+    });
+
+    // 加载下一页
+    var nextPage = 2;
+    var pageIsEnd = false;
+
+    function loading() {
+        if (pageIsEnd) return;
+        $('.goods-list').addClass('loading');
+        $.get('/nextpage?page=' + nextPage, function(data) {
+            if (data != 'end') {
+                $('.goods-list').append(data);
+                $("img.lazy").lazyload();
+                nextPage++;
+            } else {
+                $('.label').html('没有更多商品啦');
+                pageIsEnd = true;
+            }
+            $('.goods-list').removeClass('loading');
+        });
+    }
+    // 滚动
+    var before = $(window).scrollTop();
+    $(window).scroll(function() {
+        var after = $(window).scrollTop();
+        if (after > before && ($(window).height() + $(window).scrollTop() + 200) >= $('body').height()) {
+            !$('.goods-list').hasClass('loading') && loading();
+        }
+        before = after;
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="/favicon.ico" rel="shortcut icon">
+    <link href="/favicon.ico" rel="icon">
+    <link href="/favicon.ico" rel="Bookmark">
+    <title>旺仔快讯-每天千款天猫淘宝内部优惠券秒杀，一折限时疯抢！</title>
+    <meta name="Keywords" content="旺仔快讯,天猫淘宝内部优惠券折扣,9块9包邮,限时特卖,优品折扣,旺仔快讯">
+    <meta name="Description" content="旺仔快讯-优惠券折扣直播第一站！每天更新千款，纯人工筛选验货，限时限量特卖，全场1折包邮！">
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/wap_common.css" rel="stylesheet">
+    <link href="css/wapindex.css" rel="stylesheet">
+    <script src="js/jquery.2.0.min.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/lazyload.js"></script>
+    <script charset="gbk" async="" src="js/tkapi.js"></script>
+</head>
+
+<body>
+    <div class="main-title clearfix">
+        <a href="javascript:;" class="main-logo fl"> 旺仔快讯 </a>
+        <div class="search fl" style="width: 201px;">
+            <form action="/search" method="get">
+                <button class="search_submit background"></button>
+                <input type="text" placeholder="好宝贝 等你搜" name="kw" class="search_area" autocomplete="off" style="width: 169px;">
+            </form>
+        </div>
+        <a id="mui-action-menu" class="mui-action-menu mui-pull-left main-icon fr" href="javascript:;">
+            <span></span>
+        </a>
+    </div>
+    <!-- 主界面具体展示内容 -->
+    <div class="index-wrapper">
+        <div class="swiper-container swiper-container-horizontal" style="width: 100%; height: 156.703px;">
+            <div class="swiper-wrapper" style="transform: translate3d(-1875px, 0px, 0px); transition-duration: 0ms;">
+                <% include ./html/swiper-slide.html %>
+            </div>
+            <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
+        </div>
+        <script>
+        (function() {
+            window.onresize = function() {
+                $('.swiper-slide').height($('.swiper-container').width() / 414 * 173);
+                $('.swiper-container').height($('.swiper-container').width() / 414 * 173);
+            }
+            $('.swiper-slide').height($('.swiper-container').width() / 414 * 173);
+            $('.swiper-container').height($('.swiper-container').width() / 414 * 173);
+
+        })()
+        </script>
+        <style>
+        .swiper-pagination {
+            position: absolute;
+            text-align: center;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s;
+            -webkit-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            z-index: 10
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            border-radius: 100%;
+            background: #000;
+            opacity: .1
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 6px;
+            height: 6px;
+            opacity: 1;
+            background: white;
+            border: #000 1px solid;
+            opacity: .1
+        }
+        </style>
+        <div class="icon-link-wrapper">
+            <ul class="icon-url-list clearfix">
+                <li class="icon-99by">
+                    <a href="/theme?theme=9.9包邮">
+                        <i></i>
+                        <span>9.9包邮</span>
+                    </a>
+                </li>
+                <li class="icon-rqb">
+                    <a href="/theme?theme=超级人气榜">
+                        <i></i>
+                        <span>超级人气榜</span>
+                    </a>
+                </li>
+                <li class="icon-xblj">
+                    <a href="/theme?theme=咚咚抢">
+                        <i></i>
+                        <span>咚咚抢</span>
+                    </a>
+                </li>
+                <li class="icon-jpsf">
+                    <a href="/theme?theme=小编力荐">
+                        <i></i>
+                        <span>小编力荐</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="shoufa-wrapper">
+        <div class="title-wrapper">
+            <div class="shoufa-tit">
+                <span class="shoufa-img"></span>
+                <span class="shoufa-txt">
+                <b><i>13:00</i>正在抢购</b>
+            </span>
+                <a href="/theme?theme=精品首发">查看更多&gt;</a>
+            </div>
+        </div>
+        <div class="shoufa-list">
+            <ul>
+                <% include ./html/shoufa-item.html %>
+            </ul>
+        </div>
+    </div>
+    <div class="you-wrapper clearfix">
+        <div class="title-wrapper fl"></div>
+        <div class="text fl">
+            <span class="mui-badge mui-badge-blue main-badge">31191</span>
+        </div>
+    </div>
+    <div class="goods-list">
+        <% include ./html/goods-item.html %>
+    </div>
+    <div class="pullup-goods">
+        <div class="label">商品加载中...</div>
+    </div>
+    <% include ./html/show-top-menu.html %>
+    <div class="toTop">&#xe601;</div>
+    <script src="js/cms_common.js"></script>
+    <script>
+    $(function() {
+        var mySwiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            loop: true,
+            autoplay: 2500
+        });
+        $("img.lazy").lazyload();
+    });
+
+    // 加载下一页
+    var nextPage = 2;
+    var pageIsEnd = false;
+
+    function loading() {
+        if (pageIsEnd) return;
+        $('.goods-list').addClass('loading');
+        $.get('/nextpage?page=' + nextPage, function(data) {
+            if (data != 'end') {
+                $('.goods-list').append(data);
+                $("img.lazy").lazyload();
+                nextPage++;
+            } else {
+                $('.label').html('没有更多商品啦');
+                pageIsEnd = true;
+            }
+            $('.goods-list').removeClass('loading');
+        });
+    }
+    // 滚动
+    var before = $(window).scrollTop();
+    $(window).scroll(function() {
+        var after = $(window).scrollTop();
+        if (after > before && ($(window).height() + $(window).scrollTop() + 200) >= $('body').height()) {
+            !$('.goods-list').hasClass('loading') && loading();
+        }
+        before = after;
+    });
+    </script>
+</body>
+
+</html>
